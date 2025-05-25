@@ -1,0 +1,7 @@
+services:
+  shorturl-frontend:
+    image: shorturl-frontend:v0.0.1
+    # build: ./shorturl
+    ports:
+      - "80:80"
+    restart: always
