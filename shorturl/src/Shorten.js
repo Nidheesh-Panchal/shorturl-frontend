@@ -75,13 +75,11 @@ export default function SignIn() {
     });
 
     try {
-      const response = await fetch('http://localhost:8080/api/v1/generateShortUrl', {
+      const response = await fetch('/api/v1/generateShortUrl', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ originalUrl, expirationDate }),
-      });
+      });      
   
       if (response.ok) {
         const data = await response.json();

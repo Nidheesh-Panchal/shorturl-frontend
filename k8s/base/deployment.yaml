@@ -21,4 +21,4 @@ spec:
         - name: shorturl-frontend
           image: shorturl-frontend:v0.0.1
           ports:
-            - containerPort: 8000
+            - containerPort: 80

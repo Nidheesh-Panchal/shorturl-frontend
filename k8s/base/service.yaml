@@ -11,5 +11,5 @@ spec:
   selector:
     app: shorturl-frontend
   ports:
-    - port: 8000
+    - port: 80
       targetPort: 80

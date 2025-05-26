@@ -57,4 +57,7 @@ kubectl kustomize ./ > out.yaml
 
 # apply the manifest files
 kubectl apply -k ./
+
+# expose the service from minikube to our localhost
+minikube service shorturl-frontend -n shorturl
 ```
