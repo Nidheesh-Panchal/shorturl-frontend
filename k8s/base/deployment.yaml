@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shorturl-frontend
+  namespace: shorturl
+  labels:
+    app: shorturl-frontend
+    env: base
+spec:
+  selector:
+    matchLabels:
+      app: shorturl-frontend
+
+  template:
+    metadata:
+      labels:
+        app: shorturl-frontend
+        env: base
+    spec:
+      containers:
+        - name: shorturl-frontend
+          image: shorturl-frontend:v0.0.1
+          ports:
+            - containerPort: 8000

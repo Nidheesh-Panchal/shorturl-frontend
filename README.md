@@ -39,3 +39,22 @@ docker compose up -d
 # tail logs
 docker compose logs -f
 ```
+
+### Run with kustomize on k8s cluster
+
+```bash
+
+# Build image for minikube local env
+cd shorturl
+eval $(minikube docker-env)
+docker build -t shorturl-frontend:v0.0.1 .
+
+# Run kustomize command to get a single yaml manifest file
+# this will save the file to out.yaml in k8s folder
+# easy to check what was actually deployed
+cd k8s
+kubectl kustomize ./ > out.yaml
+
+# apply the manifest files
+kubectl apply -k ./
+```

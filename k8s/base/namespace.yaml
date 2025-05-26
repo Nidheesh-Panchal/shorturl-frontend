@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: shorturl
+  labels:
+    app: shorturl
+    env: base

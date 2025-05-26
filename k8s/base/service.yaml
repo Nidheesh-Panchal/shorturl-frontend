@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shorturl-frontend
+  namespace: shorturl
+  labels:
+    app: shorturl-frontend
+    env: base
+spec:
+  type: ClusterIP
+  selector:
+    app: shorturl-frontend
+  ports:
+    - port: 8000
+      targetPort: 80
