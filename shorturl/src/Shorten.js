@@ -84,8 +84,12 @@ export default function SignIn() {
       if (response.ok) {
         const data = await response.json();
         console.log('API response:', data);
-        setShortUrl("http://localhost:8080/"+data.shortUrl)
+        // Construct the short URL dynamically using current host and port
+        const { protocol, hostname, port } = window.location;
+        const baseUrl = `${protocol}//${hostname}${port ? `:${port}` : ''}`;
+        
         // Handle the successful response from the API
+        setShortUrl(`${baseUrl}/${data.shortUrl}`);
       } else {
         console.error('API request failed:', response.status);
         // Handle the error case
